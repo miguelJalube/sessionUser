@@ -5,7 +5,7 @@ use PDO;
 class SPDO{
   private $PDOInstance = null;
   private static $instance = null;
-  const configFile = 'config.ini';
+  const CONFIG = 'config.ini';
 
 
   private function __construct($host, $user, $password, $dbName){
@@ -14,7 +14,7 @@ class SPDO{
 
   public static function getInstance(){
     if(is_null(self::$instance)){
-        $ini_array = parse_ini_file(self::configFile);
+        $ini_array = parse_ini_file(self::CONFIG);
         self::$instance = new SPDO($ini_array['dbHost'], $ini_array['dbUser'], $ini_array['dbPassword'], $ini_array['dbName']);
     }
     return self::$instance;
