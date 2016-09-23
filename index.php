@@ -6,7 +6,7 @@ function __autoload($class_name){
     }
 }
 
-if (isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['username']) && !empty($_POST['username'])){    
+if (isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['username']) && !empty($_POST['username'])){
     $login = \controller\Login::getInstance($_POST);
     $check = $login->initSession();
 }
