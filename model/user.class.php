@@ -18,6 +18,10 @@ class User{
         $this->password = $arg['password'];
     }
     
+    /*
+    *   La methode userExists n'a pas été testée avec le SPDO
+    *
+    /*
     public function userExists(){
         $bind = array(
             'username'=>  $this->username,
